@@ -1,0 +1,4 @@
+# Replace with your actual GitHub username: Tayyab510
+git remote add origin https://github.com/Tayyab510/portfolio-website.git
+git branch -M main
+git push -u origin main

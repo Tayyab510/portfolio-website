@@ -3,7 +3,7 @@
 A modern, animated portfolio website showcasing AI/Software Engineering skills and projects.
 
 ## 🚀 **Live Demo**
-[View Live Portfolio](https://your-username.github.io/portfolio-website)
+[View Live Portfolio](https://Tayyab510.github.io/portfolio-website)
 
 ## ✨ **Features**
 - **Modern Glassmorphism Design** with purple/cream color scheme
