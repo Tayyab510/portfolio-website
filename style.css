@@ -7,18 +7,22 @@
 
 :root {
     --primary-color: #2c3e50;
-    --secondary-color: #f8f9fa;
+    --secondary-color: #34495e;
     --accent-color: #3498db;
     --accent-light: #5dade2;
     --accent-dark: #2874a6;
-    --glass-bg: rgba(255, 255, 255, 0.3);
-    --glass-border: rgba(52, 152, 219, 0.15);
-    --shadow-light: 0 8px 32px rgba(44, 62, 80, 0.1);
-    --shadow-medium: 0 12px 40px rgba(44, 62, 80, 0.15);
-    --gradient-1: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    --gradient-2: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
-    --gradient-3: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(52, 73, 80, 0.1);
+    --shadow-light: 0 8px 32px rgba(52, 73, 80, 0.08);
+    --shadow-medium: 0 16px 48px rgba(52, 73, 80, 0.12);
+    --shadow-large: 0 24px 64px rgba(52, 73, 80, 0.16);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-1: linear-gradient(135deg, #3498db, #2980b9);
+    --gradient-2: linear-gradient(135deg, #5dade2, #3498db);
+    --gradient-3: linear-gradient(135deg, #2874a6, #1f618d);
 }
 
 html {
@@ -27,8 +31,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
-    background-attachment: fixed;
+    background: #fafbfc;
     color: var(--primary-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -43,8 +46,8 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(93, 173, 226, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(52, 152, 219, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(93, 173, 226, 0.01) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -548,27 +551,27 @@ section {
 }
 
 .skill-card:nth-child(1)::before {
-    background-image: url('https://picsum.photos/seed/python-tech/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/python-programming-code/400/300.jpg');
 }
 
 .skill-card:nth-child(2)::before {
-    background-image: url('https://picsum.photos/seed/ai-technology/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/machine-learning-ai/400/300.jpg');
 }
 
 .skill-card:nth-child(3)::before {
-    background-image: url('https://picsum.photos/seed/backend-dev/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/backend-development-server/400/300.jpg');
 }
 
 .skill-card:nth-child(4)::before {
-    background-image: url('https://picsum.photos/seed/neural-networks/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/neural-network-brain/400/300.jpg');
 }
 
 .skill-card:nth-child(5)::before {
-    background-image: url('https://picsum.photos/seed/system-design/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/system-design-architecture/400/300.jpg');
 }
 
 .skill-card:nth-child(6)::before {
-    background-image: url('https://picsum.photos/seed/project-management/400/300.jpg');
+    background-image: url('https://picsum.photos/seed/project-management-team/400/300.jpg');
 }
 
 .skill-card:hover::before {
@@ -636,61 +639,67 @@ line-height: 1.6;
 
 /* Training Section */
 .training {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: #fafbfc;
     position: relative;
     z-index: 2;
 }
 
 .training-timeline {
     position: relative;
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
 .training-timeline::before {
     content: '';
     position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
     background: var(--accent-color);
+    transform: translateY(-50%);
 }
 
 .timeline-item {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
     position: relative;
+    z-index: 2;
+    flex: 1;
 }
 
 .timeline-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background: var(--gradient-1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 24px;
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-size: 28px;
+    position: relative;
     z-index: 2;
     box-shadow: var(--shadow-medium);
     animation: iconPulse 2s ease-in-out infinite;
+    margin-bottom: 20px;
 }
 
 .timeline-content {
-    width: calc(100% - 90px);
-    margin-left: 90px;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 30px;
     box-shadow: var(--shadow-light);
+    text-align: center;
+    width: 100%;
 }
 
 @keyframes iconPulse {
@@ -726,6 +735,7 @@ line-height: 1.6;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 32px;
+    align-items: stretch;
 }
 
 .experience-card {
@@ -738,6 +748,9 @@ line-height: 1.6;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .experience-card::before {
@@ -818,6 +831,7 @@ line-height: 1.6;
     list-style: none;
     padding: 20px 32px 32px;
     margin: 0;
+    flex-grow: 1;
 }
 
 .experience-card li {
@@ -1241,25 +1255,28 @@ line-height: 1.6;
         height: 250px;
     }
 
+    .training-timeline {
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .training-timeline::before {
-        left: 20px;
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .timeline-item {
-        padding-left: 60px;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
     }
 
     .timeline-icon {
-        left: 0;
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-
-    .timeline-content {
-        width: calc(100% - 60px);
-        margin-left: 60px;
-        padding: 20px;
+        margin-bottom: 0;
+        margin-right: 20px;
     }
 
     .contact-content {
