@@ -643,31 +643,25 @@ line-height: 1.6;
 
 .training-timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .training-timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 30px;
     top: 0;
     bottom: 0;
     width: 2px;
     background: var(--accent-color);
-    transform: translateX(-50%);
 }
 
 .timeline-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
+    align-items: flex-start;
+    margin-bottom: 40px;
     position: relative;
-}
-
-.timeline-item:nth-child(even) {
-    flex-direction: row-reverse;
 }
 
 .timeline-icon {
@@ -681,32 +675,33 @@ line-height: 1.6;
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    top: 0;
     z-index: 2;
     box-shadow: var(--shadow-medium);
     animation: iconPulse 2s ease-in-out infinite;
 }
 
-@keyframes iconPulse {
-    0%, 100% { 
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.3);
-    }
-    50% { 
-        transform: translateX(-50%) scale(1.05);
-        box-shadow: 0 0 0 8px rgba(52, 152, 219, 0);
-    }
-}
-
 .timeline-content {
-    width: 45%;
+    width: calc(100% - 90px);
+    margin-left: 90px;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 30px;
     box-shadow: var(--shadow-light);
+}
+
+@keyframes iconPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.3);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 8px rgba(52, 152, 219, 0);
+    }
 }
 
 .timeline-content h3 {
@@ -1126,22 +1121,24 @@ line-height: 1.6;
     }
 
     .training-timeline::before {
-        left: 30px;
+        left: 20px;
     }
 
     .timeline-item {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding-left: 80px;
+        padding-left: 60px;
     }
 
     .timeline-icon {
-        left: 30px;
-        transform: translateX(-50%);
+        left: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 
     .timeline-content {
-        width: 100%;
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        padding: 20px;
     }
 
     .contact-content {
