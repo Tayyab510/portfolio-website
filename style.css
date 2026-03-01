@@ -6,19 +6,19 @@
 }
 
 :root {
-    --primary-color: #2d3436;
-    --secondary-color: #f8f5f0;
-    --accent-color: #6c5ce7;
-    --accent-light: #a29bfe;
-    --accent-dark: #5f3dc4;
-    --glass-bg: rgba(255, 255, 255, 0.25);
-    --glass-border: rgba(108, 92, 231, 0.2);
-    --shadow-light: 0 8px 32px rgba(108, 92, 231, 0.15);
-    --shadow-medium: 0 12px 40px rgba(108, 92, 231, 0.25);
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-color: #2c3e50;
+    --secondary-color: #f8f9fa;
+    --accent-color: #3498db;
+    --accent-light: #5dade2;
+    --accent-dark: #2874a6;
+    --glass-bg: rgba(255, 255, 255, 0.3);
+    --glass-border: rgba(52, 152, 219, 0.15);
+    --shadow-light: 0 8px 32px rgba(44, 62, 80, 0.1);
+    --shadow-medium: 0 12px 40px rgba(44, 62, 80, 0.15);
+    --gradient-1: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    --gradient-2: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    --gradient-3: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -27,7 +27,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f8f5f0 0%, #e8e3d8 50%, #f8f5f0 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
     background-attachment: fixed;
     color: var(--primary-color);
     line-height: 1.6;
@@ -43,9 +43,8 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(162, 155, 254, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(95, 61, 196, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(93, 173, 226, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -154,16 +153,16 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(162, 155, 254, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(52, 152, 219, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(93, 173, 226, 0.05) 0%, transparent 50%);
     pointer-events: none;
-    animation: floatGradient 6s ease-in-out infinite;
+    animation: floatGradient 8s ease-in-out infinite;
 }
 
 @keyframes floatGradient {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(-20px, -20px) scale(1.1); }
-    66% { transform: translate(20px, -10px) scale(0.9); }
+    33% { transform: translate(-10px, -10px) scale(1.05); }
+    66% { transform: translate(10px, -5px) scale(0.95); }
 }
 
 .hero-container {
@@ -193,10 +192,10 @@ body::before {
 
 @keyframes titleGlow {
     0%, 100% { 
-        filter: brightness(1) drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));
+        filter: brightness(1) drop-shadow(0 0 10px rgba(52, 152, 219, 0.2));
     }
     50% { 
-        filter: brightness(1.2) drop-shadow(0 0 30px rgba(108, 92, 231, 0.5));
+        filter: brightness(1.1) drop-shadow(0 0 15px rgba(52, 152, 219, 0.3));
     }
 }
 
@@ -419,12 +418,12 @@ section {
     border-color: var(--accent-light);
 }
 
-.skill-card:nth-child(1) i { color: #3776ab; } /* Python Blue */
-.skill-card:nth-child(2) i { color: #ff6b6b; } /* AI Red */
-.skill-card:nth-child(3) i { color: #68a063; } /* Backend Green */
-.skill-card:nth-child(4) i { color: #4ecdc4; } /* Neural Teal */
-.skill-card:nth-child(5) i { color: #f7b731; } /* System Yellow */
-.skill-card:nth-child(6) i { color: #5f27cd; } /* Project Purple */
+.skill-card:nth-child(1) i { color: #3498db; } /* Python Blue */
+.skill-card:nth-child(2) i { color: #e74c3c; } /* AI Red */
+.skill-card:nth-child(3) i { color: #27ae60; } /* Backend Green */
+.skill-card:nth-child(4) i { color: #16a085; } /* Neural Teal */
+.skill-card:nth-child(5) i { color: #f39c12; } /* System Yellow */
+.skill-card:nth-child(6) i { color: #8e44ad; } /* Project Purple */
 
 .skill-card i {
     font-size: 48px;
@@ -507,11 +506,11 @@ section {
 @keyframes iconPulse {
     0%, 100% { 
         transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.3);
     }
     50% { 
-        transform: translateX(-50%) scale(1.1);
-        box-shadow: 0 0 0 10px rgba(108, 92, 231, 0);
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 0 0 8px rgba(52, 152, 219, 0);
     }
 }
 
@@ -635,7 +634,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(162, 155, 254, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(93, 173, 226, 0.05) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -874,7 +873,7 @@ section {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 /* Footer */
@@ -1020,7 +1019,7 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--gradient-1);
+    background: var(--accent-color);
     border-radius: 6px;
 }
 
@@ -1046,9 +1045,9 @@ section {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(108, 92, 231, 0.3);
+    background: rgba(52, 152, 219, 0.2);
     border-radius: 50%;
-    animation: floatUp 15s infinite linear;
+    animation: floatUp 20s infinite linear;
 }
 
 .floating-particles::before {
