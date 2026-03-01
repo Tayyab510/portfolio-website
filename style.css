@@ -60,9 +60,9 @@ body::before {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(233, 236, 239, 0.8);
     z-index: 1000;
     transition: var(--transition);
 }
@@ -74,66 +74,72 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 60px;
 }
 
 .nav-logo {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: var(--primary-color);
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 3s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-    0%, 100% { filter: hue-rotate(0deg); }
-    50% { filter: hue-rotate(30deg); }
+    letter-spacing: -0.5px;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 40px;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 500;
+    font-size: 15px;
     transition: var(--transition);
     position: relative;
+    padding: 8px 0;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
     background: var(--accent-color);
-    transition: var(--transition);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
 
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 5px;
 }
 
 .hamburger span {
-    width: 25px;
-    height: 3px;
+    width: 20px;
+    height: 2px;
     background: var(--primary-color);
-    margin: 3px 0;
+    margin: 2px 0;
     transition: var(--transition);
+    border-radius: 1px;
+}
+
+/* Navigation background on scroll */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(233, 236, 239, 0.9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* Hero Section */
@@ -141,7 +147,7 @@ body::before {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0 50px;
+    padding: 80px 0 50px;
     position: relative;
 }
 

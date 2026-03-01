@@ -31,11 +31,9 @@ function initNavigation() {
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.2)';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
     });
 
